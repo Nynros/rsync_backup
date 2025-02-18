@@ -32,9 +32,10 @@ fi
 exit 0
 
 #UmountNFS
+sudo umount rocky9nfs:/nfsshare /mnt
 if [[ ! -z $(df -h |grep nfsshare) ]]
 then 
-   	sudo umount rocky9nfs:/nfsshare /mnt
+    sudo umount rocky9nfs:/nfsshare /mnt
     logger info7.info "Umount NFS Share"
     if [[ ! -z $(df -h |grep nfsshare) ]]
        then
